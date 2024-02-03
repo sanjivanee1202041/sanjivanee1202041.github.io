@@ -6,7 +6,7 @@
     <body>
         <div class="box">
             <div class="form">
-                <h2>Hospitals Deatails</h2>
+                <h2>Hospitals Details</h2>
                 <form>
                     
                     <div class="inputbox">
@@ -18,9 +18,11 @@
                         <span>Hospital Name</span>
                     </div>
                     <div class="inputbox">
-                        <input type="text" value="" id="hospital_contact" required>
+                        <input type="tel" pattern="[0-9]{10,}" id="hospital_contact" required>
                         <span>Hospital Contact</span>
                     </div>
+                    
+                    
                     <div class="inputbox">
                         <input type="text" value="" id="specialities_selected" required>
                         <span>Specialities Selected</span>
