@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>Firebase_form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="box">
+            <div class="form">
+                <h2>Login Form</h2>
+                <form>
+                    
+                    <div class="inputbox">
+                        <input type="text" value="" id="hospital_id" required>
+                        <span>Hospital ID</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="" id="hospital_name" required>
+                        <span>Hospital Name</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="" id="hospital_contact" required>
+                        <span>Hospital Contact</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="" id="specialities_selected" required>
+                        <span>Specialities Selected</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="" id="hospital_type" required>
+                        <span>Hospital Type</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="number" value="" id="beds_count" required>
+                        <span>No. of Beds in hospital</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="number" value="" id="doctors_count" required>
+                        <span>No. of Doctors in Hospitals</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="" id="latitude" required>
+                        <span>Latitude</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="" id="longitude" required>
+                        <span>Longitude</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="" id="postal_code" required>
+                        <span>Postal Code</span>
+                    </div>
+                    <input type="submit" value="submit" class="sub" id="submit">
+                </form>
+            </div>
+        </div>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+            import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyBhIW_3usm1AODL40JwQB_WS7pg7Nype7A",
+                authDomain: "ayush-hospitals-e0a65.firebaseapp.com",
+                databaseURL: "https://ayush-hospitals-e0a65-default-rtdb.asia-southeast1.firebasedatabase.app",
+                projectId: "ayush-hospitals-e0a65",
+                storageBucket: "ayush-hospitals-e0a65.appspot.com",
+                messagingSenderId: "1071004870603",
+                appId: "1:1071004870603:web:5e8f119e70985d0726b84e",
+                measurementId: "G-3YRH7LJ7K8"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+
+            // Get a reference to the database service
+            const db = getDatabase(app);
+
+            document.getElementById("submit").addEventListener('click', function(e){
+                e.preventDefault();
+                set(ref(db, 'users/' + document.getElementById("hospital_id").value), {
+                    
+                    HospitalID: document.getElementById("hospital_id").value,
+                    HospitalName: document.getElementById("hospital_name").value,
+                    HospitalContact: document.getElementById("hospital_contact").value,
+                    SpecialitiesSelected: document.getElementById("specialities_selected").value,
+                    HospitalType: document.getElementById("hospital_type").value,
+                    BedsCount: document.getElementById("beds_count").value,
+                    DoctorsCount: document.getElementById("doctors_count").value,
+                    Latitude: document.getElementById("latitude").value,
+                    Longitude: document.getElementById("longitude").value,
+                    PostalCode: document.getElementById("postal_code").value
+                });
+                alert("Login Successful!");
+            })
+        </script>
+    </body>
+</html>
