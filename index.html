@@ -17,6 +17,15 @@
                         <input type="text" value="" id="hospital_name" required>
                         <span>Hospital Name</span>
                     </div>
+
+                    <div class="inputbox">
+                        <input type="text" value="" id="hospital_State" required>
+                        <span>Hospital State</span>
+
+                    </div><div class="inputbox">
+                        <input type="text" value="" id="hospital_district" required>
+                        <span>Hospital District</span>
+                    </div>
                     <div class="inputbox">
                         <input type="tel" pattern="[0-9]{10,}" id="hospital_contact" required>
                         <span>Hospital Contact</span>
@@ -84,6 +93,8 @@
                     
                     HospitalID: document.getElementById("hospital_id").value,
                     HospitalName: document.getElementById("hospital_name").value,
+                    HospitalState: document.getElementById("hospital_state").value,
+                    HospitalDistrict: document.getElementById("hospital_district").value,
                     HospitalContact: document.getElementById("hospital_contact").value,
                     SpecialitiesSelected: document.getElementById("specialities_selected").value,
                     HospitalType: document.getElementById("hospital_type").value,
